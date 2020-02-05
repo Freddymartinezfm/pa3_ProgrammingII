@@ -7,7 +7,6 @@
 
 class Employee {
 private:
-	// the rest of these are instance/member variables 
 	std::string code;
 	std::string ssn;
 	char* first;
@@ -15,14 +14,16 @@ private:
 	std::string department;
 	std::string role;
 	double salary;
-	static int size; // static data member
-	void parse(int, std::string); //assists the parameter constructor to parse the std::string
+	static int size; 
+	void parse(int, std::string); 
 	
 public:
-	Employee(); //default constructor
-	Employee(std::string); //parameter constructor that overloads the default constructor
-	~Employee(); //destructor
+	Employee(); 
+	Employee(std::string); 
+	~Employee();
 	Employee(const Employee&);
+
+	static int getEmpSize(); //return the number of all the employee objects
 
 	std::string getFirst() const;
 	void setFirst(std::string);
@@ -30,9 +31,6 @@ public:
 	std::string getLast() const;
 	void setLast(std::string);
 	
-	
-	static int getEmpSize(); //return the number of all the employee objects
-
 	std::string getCode() const;
 	void setCode(std::string);
 

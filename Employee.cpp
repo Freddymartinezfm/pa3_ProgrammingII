@@ -107,19 +107,23 @@ void Employee::setSSN(std::string ssn){ this->ssn = ssn; }
 std::string Employee::getFirst() const { return std::string(first); }
 
 void Employee::setFirst(std::string f) {
+	if (first != nullptr){
+		std::cout << getFirst() << std::endl;
+	}
 	int len = f.size(); 
 	first = new char[len + 1];
 
 	
-	strncpy(first, f.c_str(), len  + 1);
+	strncpy(first, f.c_str(), len + 1);
 }
 
 std::string Employee::getLast() const { return std::string(last); }
 
-void Employee::setLast(std::string l) { 
+void Employee::setLast(std::string l) {
+	delete [] last; 
 	int len = l.size();
-	last = new char[len + 1];
 	strncpy(last, l.c_str(), len + 1);
+	last = new char[len + 1];
 
 }
 

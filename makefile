@@ -1,7 +1,5 @@
-
-
 pa3: main.o Employee.o Log.o
-	g++ -g main.o Employee.o Log.o  -o pa3
+	g++ -g main.o Employee.o Log.o  -o pa3 -L ../
 main.o: main.cpp Employee.h Log.h
 	g++ -g -c main.cpp 
 Log.o: Log.cpp Log.h

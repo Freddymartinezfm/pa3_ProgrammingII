@@ -15,6 +15,9 @@ int main(int argc, char** argv){
 
 		Employee* emp[MAX_CAPACITY];
 		Employee regEmp;
+		Employee *ptrE = new Employee();
+
+
 		for (int i =0; i < MAX_CAPACITY; i++) emp[i] = nullptr;
 		int count = 0;
 		if (!inFile.fail()){
@@ -23,16 +26,16 @@ int main(int argc, char** argv){
 				if (input != " "){
 					emp[count++] = new Employee(input);
 				}	
-		}	
-	}
-	inFile.close();
+			}	
+		}
+		inFile.close();
 
-	for (int i =0; i < MAX_CAPACITY; i++){
-		std::cout << "size: " << emp[i]->getEmpSize() << " ";
-		emp[i]->display();
-	}
+		for (int i =0; i < MAX_CAPACITY; i++){
+			std::cout << "size: " << emp[i]->getEmpSize() << " ";
+			emp[i]->display();
+		}
 
-	for (auto &e: emp){
-		delete e;
-	}	
+		for (auto &e: emp){
+			delete e;
+		}
 }
