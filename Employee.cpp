@@ -35,7 +35,6 @@ int Employee::getEmpSize(){
 }
 
 std::ostream& operator<<(std::ostream& os, const Employee& employee) {
-	//std::cout << Employee::getEmpSize();
     os 
 	<< std::setw(8) << std::left << employee.getCode()
 	<< std::setw(15) << std::left <<  employee.getSSN() 
@@ -97,6 +96,7 @@ void Employee::parse(int count, std::string field){
 		std::cout << "INVALID_FIELD";
 		break;
 	}
+
 
 }
 

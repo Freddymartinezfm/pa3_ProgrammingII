@@ -10,9 +10,8 @@ int main(int argc, char** argv){
 		argc > 1 ? fileName = argv[1] : fileName =  "employees.txt";
 		
 		std::ifstream inFile(fileName);
-		if (!inFile.good()){
+		if (!inFile.good())
 			std::cerr << "Error opening file " << std::endl;
-		}
 
 		Employee* emp[MAX_CAPACITY];
 		Employee regEmp;
@@ -24,7 +23,7 @@ int main(int argc, char** argv){
 				if (input != " "){
 					emp[count++] = new Employee(input);
 				}	
-			}
+		}	
 	}
 	inFile.close();
 
@@ -33,8 +32,7 @@ int main(int argc, char** argv){
 		emp[i]->display();
 	}
 
-	for (int i = 0; i < MAX_CAPACITY; i++){
-		delete emp[i];
-	}
-	
+	for (auto &e: emp){
+		delete e;
+	}	
 }
