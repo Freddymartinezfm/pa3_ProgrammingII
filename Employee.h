@@ -10,10 +10,8 @@ private:
 	// the rest of these are instance/member variables 
 	std::string code;
 	std::string ssn;
-	std::string first;
-	std::string last;
-	char *cFirst;
-	char *cLast;
+	char* first;
+	char* last;
 	std::string department;
 	std::string role;
 	double salary;
@@ -26,24 +24,20 @@ public:
 	~Employee(); //destructor
 	Employee(const Employee&);
 
-	
-	std::string getCode() const;
-	void setCode(std::string);
-
-	std::string getSSN() const;
-	void setSSN(std::string);
-
 	std::string getFirst() const;
 	void setFirst(std::string);
 
 	std::string getLast() const;
 	void setLast(std::string);
+	
+	
+	static int getEmpSize(); //return the number of all the employee objects
 
-	char* getcFirst() const;
-	void setcFirst(std::string);
+	std::string getCode() const;
+	void setCode(std::string);
 
-	char* getcLast() const;
-	void setcLast(std::string);
+	std::string getSSN() const;
+	void setSSN(std::string);
 
 	std::string getDept() const;
 	void setDept(std::string);
@@ -54,8 +48,8 @@ public:
 	double getSalary() const;
 	void setSalary(double);
 
+
 	void display() ; //display the information of the employee
-	static int getEmpSize(); //return the number of all the employee objects
 	friend std::ostream& operator<<(std::ostream& os, const Employee& employee);
 };
 
