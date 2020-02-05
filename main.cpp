@@ -36,6 +36,5 @@ int main(int argc, char** argv){
 	for (int i = 0; i < MAX_CAPACITY; i++){
 		delete emp[i];
 	}
-	//delete [] emp;
-
+	
 }
