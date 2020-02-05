@@ -120,10 +120,12 @@ void Employee::setFirst(std::string f) {
 std::string Employee::getLast() const { return std::string(last); }
 
 void Employee::setLast(std::string l) {
-	delete [] last; 
-	int len = l.size();
-	strncpy(last, l.c_str(), len + 1);
+	if (last != nullptr){
+		std::cout << getFirst() << std::endl;
+	}
+	int len = l.size(); 
 	last = new char[len + 1];
+	strncpy(first, l.c_str(), len + 1);
 
 }
 
