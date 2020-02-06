@@ -10,7 +10,7 @@
 const static std::string TAG {"Employee"};
 int Employee::size = 0;
 
-Employee::Employee(): code{""}, ssn{""}, first{nullptr}, last{nullptr}, department{""}, 	role{""}, salary{0}{
+Employee::Employee(): code{""}, ssn{""}, first{nullptr}, last{nullptr}, department{""}, 	role{""}, 		salary{0}{
 	std::string mTAG {"Employee()"};
 	Log::m(TAG, mTAG, "Called");
 }
@@ -56,6 +56,9 @@ Employee::~Employee(){
 	std::string mTAG {"~Employee()"}; 
 	Log::m(TAG, mTAG, "Called");
 	Employee::size--;
+	delete []first;
+	delete []last;
+		
 
 	
 }
@@ -112,8 +115,6 @@ void Employee::setFirst(std::string f) {
 	}
 	int len = f.size(); 
 	first = new char[len + 1];
-
-	
 	strncpy(first, f.c_str(), len + 1);
 }
 
