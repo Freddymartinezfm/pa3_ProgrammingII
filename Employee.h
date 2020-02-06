@@ -44,7 +44,7 @@ public:
 	void setRole(std::string);
 
 	double getSalary() const;
-	void setSalary(double);
+	void setSalary(double) ;
 
 
 	void display() ; //display the information of the employee

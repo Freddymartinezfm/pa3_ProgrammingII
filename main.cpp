@@ -14,8 +14,8 @@ int main(int argc, char** argv){
 			std::cerr << "Error opening file " << std::endl;
 
 		Employee* emp[MAX_CAPACITY];
-		Employee regEmp;
-		Employee *ptrE = new Employee();
+		Employee onTheStack;
+		Employee *onTheHeap = new Employee();
 
 
 		for (int i =0; i < MAX_CAPACITY; i++) emp[i] = nullptr;
@@ -35,7 +35,12 @@ int main(int argc, char** argv){
 			emp[i]->display();
 		}
 
-		for (auto &e: emp){
-			delete e;
-		}
+		
+
+		onTheHeap->setFirst("==heapfirst==");
+		std::cout << onTheHeap->getFirst() << std::endl;
+
+		onTheStack.setFirst("==stackfirst==");
+		std::cout << onTheHeap->getFirst() << std::endl;
+		
 }
