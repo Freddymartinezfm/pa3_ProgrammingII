@@ -2,7 +2,6 @@
 #include <fstream>
 #include <string>
 #include "Employee.h"
-#include "Log.h"
 
 int main(int argc, char** argv){
 		const int  MAX_CAPACITY {23};

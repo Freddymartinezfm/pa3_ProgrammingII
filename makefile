@@ -1,12 +1,24 @@
-pa3: main.o Employee.o Log.o
-	g++ main.o Employee.o Log.o -o pa3
-main.o: main.cpp Log.h
-	g++ -c -g -Wall main.cpp
-Log.o: Log.h Log.cpp
-	g++ -c -g -Wall Log.cpp
+
+
+TARGET = pa3
+CC = g++
+FLAGS = -g -Wall
+OBJ = main.o Employee.o 
+HEADERS = Employee.h Log.h
+TYPE = win
+CPP = Employee.cpp main.cpp 
+
+pa2: clean $(OBJ)
+	$(CC) $(FLAGS) $(OBJ)  -o $(TARGET)
+
+main.o: $(HEADERS) $(CPP)
+	$(CC) $(FLAGS) -c $(CPP)
+
 Employee.o: Employee.cpp Employee.h
-	g++ -c -g -Wall Employee.cpp
+	$(CC) $(FLAGS) Employee.cpp
 clean:
-	rm -f *.o  pa2
-# clean:
-	# del *.o
+ifeq ($(TYPE), win)
+	del *.o pa2
+else
+	rm *.o pa2
+endif
