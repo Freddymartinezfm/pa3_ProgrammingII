@@ -2,13 +2,13 @@ TARGET = pa3
 CC = g++
 FLAGS = -g -Wall
 OBJ = main.o Employee.o Node.o
-HEADERS = Employee.h Log.h Node.h
+HEADER = Employee.h Log.h Node.h
 TYPE = win
 CPP = Employee.cpp main.cpp Employee.cpp Node.cpp
 
 $(TARGET): clean $(OBJ)
 	$(CC) $(FLAGS) $(OBJ)  -o $(TARGET)
-main.o: $(HEADERS) $(CPP)
+main.o: $(HEADER) $(CPP)
 	$(CC) $(FLAGS) -c $(CPP)
 Employee.o: Employee.cpp Employee.h
 	$(CC) $(FLAGS) Employee.cpp
