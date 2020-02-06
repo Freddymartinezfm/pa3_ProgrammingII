@@ -1,17 +1,19 @@
 TARGET = pa3
 CC = g++
 FLAGS = -g -Wall
-OBJ = main.o Employee.o 
-HEADERS = Employee.h Log.h
+OBJ = main.o Employee.o Node.o
+HEADERS = Employee.h Log.h Node.h
 TYPE = win
-CPP = Employee.cpp main.cpp 
+CPP = Employee.cpp main.cpp Employee.cpp Node.cpp
 
-pa2: clean $(OBJ)
+$(TARGET): clean $(OBJ)
 	$(CC) $(FLAGS) $(OBJ)  -o $(TARGET)
 main.o: $(HEADERS) $(CPP)
 	$(CC) $(FLAGS) -c $(CPP)
 Employee.o: Employee.cpp Employee.h
 	$(CC) $(FLAGS) Employee.cpp
+Node.o: Node.cpp Node.h
+	$(CC) $(FLAGS) Node.cpp
 clean:
 ifeq ($(TYPE), win)
 	del *.o pa2

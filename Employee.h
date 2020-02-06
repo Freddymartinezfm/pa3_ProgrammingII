@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include "node.h"
 
 
 class Employee {
