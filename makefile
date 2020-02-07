@@ -1,7 +1,7 @@
 TARGET = pa3
 CXX = g++
 CPPFLAGS = -g -Wall
-TYPE = w
+TYPE = l
 CPP = Employee.cpp main.cpp Employee.cpp Node.cpp Log.cpp
 HEADER = Employee.h Log.h Node.h Log.h
 OBJ = main.o Employee.o Node.o Log.o
@@ -26,7 +26,7 @@ ifeq ($(TYPE), w)
 	del *.o
 else
 	rm -f *.o
-	rm -f pa3.out
+	rm -f pa3
 endif 
 
 
