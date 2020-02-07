@@ -1,5 +1,5 @@
-#ifndef __EMPLOYEE__H__
-#define __EMPLOYEE__H__
+#ifndef _EMPLOYEE_H_
+#define _EMPLOYEE_H_
 
 #include <string>
 #include <iostream>

@@ -4,7 +4,6 @@
 #include <iostream>
 #include "Log.h"
 #include <sstream>
-#include <cstring>
 #include <iomanip>
 
 const static std::string TAG {"Employee"};
