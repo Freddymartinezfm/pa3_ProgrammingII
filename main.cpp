@@ -41,6 +41,6 @@ int main(int argc, char** argv){
 		std::cout << onTheHeap->getFirst() << std::endl;
 
 		onTheStack.setFirst("==stackfirst==");
-		std::cout << onTheHeap->getFirst() << std::endl;
+		std::cout << onTheStack.getFirst() << std::endl;
 		
 }

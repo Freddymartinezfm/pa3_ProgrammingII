@@ -1,26 +1,34 @@
 TARGET = pa3
-CC = g++
-FLAGS = -g -Wall
-OBJ = main.o Employee.o Node.o Log.o
-HEADER = Employee.h Log.h Node.h Log.h
-TYPE = win
+CXX = g++
+CPPFLAGS = -g -Wall
+TYPE = w
 CPP = Employee.cpp main.cpp Employee.cpp Node.cpp Log.cpp
+HEADER = Employee.h Log.h Node.h Log.h
+OBJ = main.o Employee.o Node.o Log.o
 
-$(TARGET): clean $(OBJ)
-	g++ -g -Wall $(OBJ) -o pa3
+$(TARGET): $(OBJ)
+	$(CXX) $(CPPFLAGS) $(OBJ) -o $(TARGET)
 main.o: main.cpp Employee.h
-	g++ -g -c -Wall -c main.cpp
+	$(CXX) $(CPPFLAGS) -c main.cpp
 Employee.o: Employee.h Employee.cpp
-	g++ -g -c -Wall Employee.cpp
+	$(CXX) $(CPPFLAGS) -c Employee.cpp
 Log.o: Log.h Log.cpp
-	g++ -g -Wall -c Log.cpp
+	$(CXX) $(CPPFLAGS) -c Log.cpp
 Node.o: Node.h Node.cpp
-	g++ -g -Wall -c Node.cpp
+	$(CXX) $(CPPFLAGS) -c Node.cpp
+
+# %.cpp:
+# 	@$
 
 clean:
-ifeq ($(TYPE), win)
-	del pa3
+ifeq ($(TYPE), w)
+	del pa3.exe
 	del *.o
 else
-	rm *.o pa3
-endif
+	rm -f *.o
+	rm -f pa3.out
+endif 
+
+
+
+
