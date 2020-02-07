@@ -6,8 +6,6 @@ HEADER = Employee.h Log.h Node.h Log.h
 TYPE = win
 CPP = Employee.cpp main.cpp Employee.cpp Node.cpp Log.cpp
 
-
-
 $(TARGET): clean $(OBJ)
 	g++ -g -Wall $(OBJ) -o pa3
 main.o: main.cpp Employee.h
