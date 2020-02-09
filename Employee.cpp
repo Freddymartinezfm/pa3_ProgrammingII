@@ -8,10 +8,13 @@
 
 const static std::string TAG {"Employee"};
 int Employee::size = 0;
+static const int  MAX_CAPACITY {23};
 
 Employee::Employee(): code{""}, ssn{""}, first{nullptr}, last{nullptr}, department{""}, 	role{""}, 		salary{0}{
 	std::string mTAG {"Employee()"};
 	Log::m(TAG, mTAG, "Called");
+	++Employee::size;
+	std::cout << "size: " << getEmpSize() << " ";
 }
 
 Employee::Employee(std::string input){
@@ -25,7 +28,8 @@ Employee::Employee(std::string input){
 		parse(count, field);
 		++count;
 	}
-	Employee::size++;
+	++Employee::size;
+	std::cout << "size: " << getEmpSize() << " ";
 }
 
 int Employee::getEmpSize(){
@@ -57,9 +61,6 @@ Employee::~Employee(){
 	Employee::size--;
 	delete []first;
 	delete []last;
-		
-
-	
 }
 
 void Employee::parse(int count, std::string field){
