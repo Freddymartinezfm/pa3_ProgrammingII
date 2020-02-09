@@ -34,6 +34,12 @@ int main(int argc, char** argv){
 			std::cout << "size: " << emp[i]->getEmpSize() << " ";
 			emp[i]->display();
 		}
+		
+		for (int i =0; i < MAX_CAPACITY; i++){
+			std::cout << "size: " << emp[i]->getEmpSize() << " ";
+			
+			delete emp[i];
+		}
 
 		
 
